@@ -23,7 +23,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   <Header />
   <main id="main-content">
     <section id="hero">
-      <h1 class="mr-2">Mingalaba</h1>
+      <h1 class="mr-2">My Updating (B)logs</h1>
       <a
         target="_blank"
         href="/rss.xml"
@@ -41,121 +41,125 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       </a>
 
       <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
-      </p>
-      <p>
-        Read the blog posts or check
-        <LinkButton
-          className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
-          href="https://github.com/satnaing/astro-paper#readme"
-        >
-          README
-        </LinkButton> for more info.
-      </p>
-      {
-        // only display if at least one social link is enabled
-        socialCount > 0 && (
-          <div class="social-wrapper">
-            <div class="social-links">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
-    </section>
-
-    <Hr />
-
-    {
-      featuredPosts.length > 0 && (
-        <>
-          <section id="featured">
-            <h2>Featured</h2>
-            <ul>
-              {featuredPosts.map(({ data }) => (
-                <Card
-                  href={`/posts/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              ))}
-            </ul>
-          </section>
-          <Hr />
-        </>
-      )
-    }
-
-    <section id="recent-posts">
-      <h2>Recent Posts</h2>
-      <ul>
+        このブログは僕が感じたことや考えたことを記録に残し、思考の整理も兼ねたブログです。<br
+        />ジャンルは様々だと思いますが、興味のある方はぜひ読んでみてください。
+        <p>
+          僕に関して詳しく知りたい方は、
+          <LinkButton
+            className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+            href="https://github.com/sasaharukimedes"
+          >
+            Github
+          </LinkButton>か
+          <LinkButton
+            className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+            href="https://harukimedes-portfolio.vercel.app/"
+          >
+            Portfolio
+          </LinkButton>を確認してください！
+        </p>
         {
-          sortedPosts
-            .filter(({ data }) => !data.featured)
-            .map(
-              ({ data }, index) =>
-                index < 4 && (
+          // only display if at least one social link is enabled
+          socialCount > 0 && (
+            <div class="social-wrapper">
+              <div class="social-links">Social Links:</div>
+              <Socials />
+            </div>
+          )
+        }
+      </p>
+
+      <Hr />
+
+      {
+        featuredPosts.length > 0 && (
+          <>
+            <section id="featured">
+              <h2>Featured</h2>
+              <ul>
+                {featuredPosts.map(({ data }) => (
                   <Card
                     href={`/posts/${slugify(data)}`}
                     frontmatter={data}
                     secHeading={false}
                   />
-                )
-            )
-        }
-      </ul>
-      <div class="all-posts-btn-wrapper">
-        <LinkButton href="/posts">
-          All Posts
-          <svg xmlns="http://www.w3.org/2000/svg"
-            ><path
-              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-            ></path>
-          </svg>
-        </LinkButton>
-      </div>
+                ))}
+              </ul>
+            </section>
+            <Hr />
+          </>
+        )
+      }
+
+      <section id="recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+          {
+            sortedPosts
+              .filter(({ data }) => !data.featured)
+              .map(
+                ({ data }, index) =>
+                  index < 4 && (
+                    <Card
+                      href={`/posts/${slugify(data)}`}
+                      frontmatter={data}
+                      secHeading={false}
+                    />
+                  )
+              )
+          }
+        </ul>
+        <div class="all-posts-btn-wrapper">
+          <LinkButton href="/posts">
+            All Posts
+            <svg xmlns="http://www.w3.org/2000/svg"
+              ><path
+                d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+              ></path>
+            </svg>
+          </LinkButton>
+        </div>
+      </section>
     </section>
+
+    <Footer />
   </main>
 
-  <Footer />
+  <style>
+    /* ===== Hero Section ===== */
+    #hero {
+      @apply pb-6 pt-8;
+    }
+    #hero h1 {
+      @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+    }
+    #hero .rss-link {
+      @apply mb-6;
+    }
+    #hero .rss-icon {
+      @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
+    }
+    #hero p {
+      @apply my-2;
+    }
+    .social-wrapper {
+      @apply mt-4 flex flex-col sm:flex-row sm:items-center;
+    }
+    .social-links {
+      @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+    }
+
+    /* ===== Featured & Recent Posts Sections ===== */
+    #featured,
+    #recent-posts {
+      @apply pb-6 pt-12;
+    }
+    #featured h2,
+    #recent-posts h2 {
+      @apply text-2xl font-semibold tracking-wide;
+    }
+    .all-posts-btn-wrapper {
+      @apply my-8 text-center;
+    }
+  </style>
 </Layout>
-
-<style>
-  /* ===== Hero Section ===== */
-  #hero {
-    @apply pb-6 pt-8;
-  }
-  #hero h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
-  }
-  #hero .rss-link {
-    @apply mb-6;
-  }
-  #hero .rss-icon {
-    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
-  }
-  #hero p {
-    @apply my-2;
-  }
-  .social-wrapper {
-    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
-  }
-  .social-links {
-    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
-  }
-
-  /* ===== Featured & Recent Posts Sections ===== */
-  #featured,
-  #recent-posts {
-    @apply pb-6 pt-12;
-  }
-  #featured h2,
-  #recent-posts h2 {
-    @apply text-2xl font-semibold tracking-wide;
-  }
-  .all-posts-btn-wrapper {
-    @apply my-8 text-center;
-  }
-</style>
