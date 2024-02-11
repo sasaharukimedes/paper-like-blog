@@ -1,3 +1,27 @@
+# Name
+
+**自作ブログ**
+
+# DEMO
+
+![トップ画面](/public/blog_top.png)
+
+**[自作ブログ](https://my-updating-blogs.pages.dev/)**
+
+# Digest
+
+このブログは AstroPaper という公開されているテーマをベースに作っています。デプロイは Cloudflare Pages で行っています。記事の作成は Markdownで書けるようになっています。
+
+### English Below
+
+This blog is based on a publicly available theme called AstroPaper. Deployment is done with Cloudflare Pages. Articles can be written in Markdown.
+
+# Features
+
+- Using Astro
+- Using TailwindCSS
+- Deployed by Cloudflare Pages
+
 # AstroPaper 📄
 
 ![AstroPaper](public/astropaper-og.jpg)
@@ -87,16 +111,16 @@ Documentation can be read in two formats\_ _markdown_ & _blog post_.
 
 ## 💻 Tech Stack
 
-**Main Framework** - [Astro](https://astro.build/)  
-**Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
-**Component Framework** - [ReactJS](https://reactjs.org/)  
-**Styling** - [TailwindCSS](https://tailwindcss.com/)  
-**UI/UX** - [Figma](https://figma.com)  
-**Fuzzy Search** - [FuseJS](https://fusejs.io/)  
-**Icons** - [Boxicons](https://boxicons.com/) | [Tablers](https://tabler-icons.io/)  
-**Code Formatting** - [Prettier](https://prettier.io/)  
-**Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  
-**Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)  
+**Main Framework** - [Astro](https://astro.build/)
+**Type Checking** - [TypeScript](https://www.typescriptlang.org/)
+**Component Framework** - [ReactJS](https://reactjs.org/)
+**Styling** - [TailwindCSS](https://tailwindcss.com/)
+**UI/UX** - [Figma](https://figma.com)
+**Fuzzy Search** - [FuseJS](https://fusejs.io/)
+**Icons** - [Boxicons](https://boxicons.com/) | [Tablers](https://tabler-icons.io/)
+**Code Formatting** - [Prettier](https://prettier.io/)
+**Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)
+**Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)
 **Linting** - [ESLint](https://eslint.org)
 
 ## 👨🏻‍💻 Running Locally
@@ -152,5 +176,3 @@ Licensed under the MIT License, Copyright © 2023
 ---
 
 Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contributors](https://github.com/satnaing/astro-paper/graphs/contributors).
-
-# paper-like-blog
