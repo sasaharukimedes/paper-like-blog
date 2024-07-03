@@ -1,0 +1,18 @@
+---
+interface Props {
+  datetime: string;
+  size?: string;
+  className?: string;
+}
+
+const { datetime, size, className }: Props = Astro.props;
+
+// 日本時間に変換
+const date = new Date(datetime);
+date.setHours(date.getHours() + 9);
+const formattedDatetime = date.toLocaleString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+---
+
+<time class={className} datetime={datetime}>
+  {formattedDatetime}
+</time>
